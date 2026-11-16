@@ -48,7 +48,7 @@ Siga os passos na pasta em que deseja salvar o projeto:
 | GET | `/api/users` | Consulta usuarios |
 | GET | `/api/orders/1` | Consulta pedido |
 
-As entidades e os dados sao apenas demonstrativos. O cabeçalho opcional `X-User-Id: 1` representa uma identificacao didatica para discutir permissoes; **nao e autenticacao real**.
+As entidades e os dados sao apenas demonstrativos. O cabeçalho `X-User-Id: 1` é exigido nas rotas de pedidos e usuários e representa uma identificação didática para discutir permissões; **não é autenticação real**. Clientes só acessam os próprios pedidos; a listagem de usuários é restrita a administradores e não retorna `password_hash`. Ao atualizar uma instalação existente, execute `docker compose down -v` antes de `docker compose up -d` para recriar o banco do laboratório.
 
 ## Desafio
 Em grupos, executem e analisem a API. Identifiquem **pelo menos tres problemas de seguranca**, expliquem o risco e proponham/implementem correcoes. Demonstrem os resultados com requisicoes apenas ao proprio ambiente local. Entreguem um relatorio breve (2 a 4 paginas): objetivo, endpoints analisados, evidencia, risco, correcoes, resultado do reteste e conclusao.
